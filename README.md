@@ -5,12 +5,14 @@ protoclass is a thin class library that helps create, and extend prototypes.
 
 ```javascript
 
+var protoclass = require("protoclass");
+
 
 function Animal(name) {
   this.name = name;
 }
 
-structr(Animal);
+protoclass(Animal);
 
 function Cat(name) {
   Cat.superclass.apply(this, arguments);
