@@ -40,6 +40,29 @@ consoele.log(Class.name); // Cat
 
 super prototype
 
+```javascript
+function Vehicle() {
+  
+}
+
+protoclass(Vehicle, {
+  drive: function () {
+
+  }
+});
+
+
+function Car () {
+  Vehicle.superclass.apply(this, argumments);
+}
+
+Vehicle.extend(Car, {
+  drive: function () {
+    Car.__super__.drive.call(this);
+  }
+});
+```
+
 ### fn.extend(subclass[, mixins])
 
 ### fn.mixin(mixins)
