@@ -28,6 +28,20 @@ Animal.extend(Cat, {
 console.log(Class.prototype.constructor == Class); // true
 console.log(Class.superclass == Animal); // true
 consoele.log(Class.name); // Cat
-
-
 ```
+
+## API
+
+### fn protoclass([superclass,] subclass[, mixins])
+
+### fn.superclass
+
+### fn.__super__
+
+super prototype
+
+### fn.extend(subclass[, mixins])
+
+### fn.mixin(mixins)
+
+copies the the mixins over to the prototype
