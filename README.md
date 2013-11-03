@@ -1,6 +1,6 @@
 protoclass is a thin class library that helps create, and extend prototypes.
 
-## Example
+### Example
 
 
 ```javascript
@@ -26,7 +26,7 @@ Animal.extend(Cat, {
 
 
 console.log(Class.prototype.constructor == Class); // true
-console.log(Class.superclass == Animal); // true
+console.log(Class.parent == Animal); // true
 consoele.log(Class.name); // Cat
 ```
 
