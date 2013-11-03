@@ -15,7 +15,7 @@ function Animal(name) {
 protoclass(Animal);
 
 function Cat(name) {
-  Cat.superclass.apply(this, arguments);
+  Cat.parent.apply(this, arguments);
 }
 
 Animal.extend(Cat, {
