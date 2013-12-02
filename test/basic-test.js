@@ -126,9 +126,10 @@ describe("basic#", function() {
 
     }
 
-    structr(Animal);
+    var Animal2 = structr(Animal);
 
     expect(Animal.prototype.bark).to.be(Animal.prototype.bark);
+    expect(Animal).to.be(Animal2);
   });
 
 
