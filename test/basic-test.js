@@ -3,7 +3,7 @@ structr    = require("..");
 
 describe("basic#", function() {
 
-
+  
   it("can create a structr", function () {
 
     function Person(name) {
@@ -16,6 +16,22 @@ describe("basic#", function() {
     expect(person.name).to.be("craig");
   });
 
+
+  it("can set methods to the class", function () {
+    function Person (name) {
+      this.name = name;
+    }
+
+    structr(Person, {
+      getName: function () {
+        return this.name;
+      }
+    });
+
+    var p = new Person("craig");
+    expect(p.getName).not.to.be(undefined);
+    expect(p.getName()).to.be("craig");
+  });
 
   it("can extend a value via structr", function () {
 
@@ -99,6 +115,29 @@ describe("basic#", function() {
 
     expect(cat.speak()).to.be("molly says... meow");
     expect(kitten.speak()).to.be("arnold says... meow!");
+  });
+
+
+  it("calls super if the child doesn't", function () {
+
+    function Animal () {
+      this.name = "sapo";
+    }
+
+    structr(Animal);
+
+    console.log(Animal.extend)
+
+    var Dog = Animal.extend({
+      bark: function () {
+
+      }
+    });
+
+
+    var dog = new Dog();
+    expect(Dog).not.to.be(Animal);
+    expect(dog.name).to.be("sapo");
   });
 
 });
