@@ -117,6 +117,20 @@ describe("basic#", function() {
     expect(kitten.speak()).to.be("arnold says... meow!");
   });
 
+  it("doesn't strip existing methods", function () {
+    function Animal () {
+
+    }
+
+    Animal.prototype.bark = function () {
+
+    }
+
+    structr(Animal);
+
+    expect(Animal.prototype.bark).to.be(Animal.prototype.bark);
+  });
+
 
   it("calls super if the child doesn't", function () {
 
@@ -126,7 +140,6 @@ describe("basic#", function() {
 
     structr(Animal);
 
-    console.log(Animal.extend)
 
     var Dog = Animal.extend({
       bark: function () {
