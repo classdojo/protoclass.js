@@ -25,9 +25,9 @@ Animal.extend(Cat, {
 });
 
 
-console.log(Class.prototype.constructor == Class); // true
-console.log(Class.parent == Animal); // true
-consoele.log(Class.name); // Cat
+console.log(Cat.prototype.constructor == Cat); // true
+console.log(Cat.parent == Animal); // true
+console.log(Cat.name); // Cat
 ```
 
 ## API
